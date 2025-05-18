@@ -1,42 +1,89 @@
-import React from 'react';
+import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa"
 
-const socials = [
-  { href: 'https://www.linkedin.com/company/leap10x/?originalSubdomain=in', icon: 'M13 2H6c-1.1...', label: 'LinkedIn' },
-  { href: 'https://www.facebook.com/profile.php?id=100093264140912', icon: 'M18 2h-3.6c-5.4... ', label: 'Facebook' },
-  { href: 'https://www.instagram.com/leap10x', icon: 'M7.75 2c-3.2... ', label: 'Instagram' },
-];
+const Footer = () => {
+  return (
+    <footer className="bg-purple-900 text-white py-12">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Logo and Contact */}
+          <div className="col-span-1">
+            <div className="flex items-center mb-4">
+              
+            </div>
+            <div className="space-y-2">
+              <a href="mailto:hello@leap10x.in" className="block hover:text-purple-300 transition-colors">
+                hello@leap10x.in
+              </a>
+              <a href="tel:+918950223219" className="block hover:text-purple-300 transition-colors">
+                +91 89502 23219
+              </a>
+            </div>
+          </div>
 
-const Footer = () => (
-  <footer className="bg-primary text-light pt-12 pb-6 px-6">
-    <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:justify-between gap-6 items-start">
-      <div>
-        <div className="font-extrabold text-2xl mb-2">Leap10x</div>
-        <div className="mb-1 text-gray-100 text-sm">hello@leap10x.in</div>
-        <div className="mb-2 text-gray-100 text-sm">+91 89502 23219</div>
-      </div>
-      <div className="mb-2">
-        <div className="font-medium mb-1">Quick Links:</div>
-        <a className="block text-gray-100 hover:text-light" href="/terms-conditions">Terms & Conditions</a>
-        <a className="block text-gray-100 hover:text-light" href="/privacy-policy">Privacy Policy</a>
-        <a className="block text-gray-100 hover:text-light" href="/blogs">Blog</a>
-      </div>
-      <div>
-        <div className="font-medium mb-1">Follow us:</div>
-        <div className="flex gap-4">
-          {socials.map((s,idx) => (
-            <a key={idx} href={s.href} aria-label={s.label} target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d={s.icon}/></svg>
-            </a>
-          ))}
+          {/* Quick Links */}
+          <div className="col-span-1">
+            <h4 className="text-lg font-medium mb-4">Quick Links:</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="/terms" className="hover:text-purple-300 transition-colors">
+                  Terms & Conditions
+                </a>
+              </li>
+              <li>
+                <a href="/privacy" className="hover:text-purple-300 transition-colors">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="/blog" className="hover:text-purple-300 transition-colors">
+                  Blog
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social Media */}
+          <div className="col-span-1">
+            <h4 className="text-lg font-medium mb-4">Follow us:</h4>
+            <div className="flex space-x-4">
+              <a href="https://linkedin.com" className="hover:text-purple-300 transition-colors">
+                <FaLinkedin size={24} />
+              </a>
+              <a href="https://twitter.com" className="hover:text-purple-300 transition-colors">
+                <FaTwitter size={24} />
+              </a>
+              <a href="https://facebook.com" className="hover:text-purple-300 transition-colors">
+                <FaFacebook size={24} />
+              </a>
+              <a href="https://instagram.com" className="hover:text-purple-300 transition-colors">
+                <FaInstagram size={24} />
+              </a>
+            </div>
+          </div>
+
+          {/* Compliance Badges */}
+          <div className="col-span-1">
+            <div className="space-y-4">
+              <div className="bg-white p-2 rounded">
+                <img src="https://cdn.prod.website-files.com/651e6c7313b882d4e31aab7d/6730db2b24ef2f2d72c95b00_GDPR.png" alt="GDPR Compliant" className="w-full h-auto" />
+              </div>
+              <div className="bg-white p-2 rounded">
+                <img src="https://cdn.prod.website-files.com/651e6c7313b882d4e31aab7d/6730db2b91a5402c4228d5ad_ISO.png" alt="ISO 27001:2013 Certified" className="w-full h-auto" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex gap-2 mt-4">
-          <img src="https://ext.same-assets.com/2073082294/3694563638.png" alt="ISO" className="h-7 bg-white rounded p-1" />
-          <img src="https://ext.same-assets.com/2073082294/47813726.false" alt="RRKabel" className="h-7 bg-white rounded p-1" />
+
+        {/* Divider */}
+        <div className="border-t border-purple-800 my-8"></div>
+
+        {/* Copyright */}
+        <div className="text-center">
+          <p>© 2024 Leap10x Training Pvt Ltd</p>
         </div>
       </div>
-    </div>
-    <div className="text-center text-gray-200 mt-8 text-xs">© 2024 Leap10x Training Pvt Ltd</div>
-  </footer>
-);
+    </footer>
+  )
+}
 
-export default Footer;
+export default Footer

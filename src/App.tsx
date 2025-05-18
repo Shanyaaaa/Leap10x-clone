@@ -16,12 +16,9 @@ import Footer from './components/Footer';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Partner from './pages/Partner';
+
 import BlogsPage from './pages/Blogs';
-import Terms from './pages/Terms';
-import Privacy from './pages/Privacy';
+
 
 function AnimatedPage({ children }) {
   return (
@@ -63,7 +60,7 @@ function App() {
             </AnimatedPage>
           }
         />
-        <Route
+         {/* <Route
           path="/about-us"
           element={
             <AnimatedPage>
@@ -85,8 +82,8 @@ function App() {
             <AnimatedPage>
               <Partner />
             </AnimatedPage>
-          }
-        />
+          } */}
+        
         <Route
           path="/blogs"
           element={
@@ -95,7 +92,7 @@ function App() {
             </AnimatedPage>
           }
         />
-        <Route
+        {/* <Route
           path="/terms-conditions"
           element={
             <AnimatedPage>
@@ -110,7 +107,7 @@ function App() {
               <Privacy />
             </AnimatedPage>
           }
-        />
+        /> */}
       </Routes>
       <Footer />
     </div>

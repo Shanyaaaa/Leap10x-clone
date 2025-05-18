@@ -8,28 +8,17 @@ const logos = [
   'https://ext.same-assets.com/2073082294/130339524.png',
 ];
 
-const slideDuration = 30; // seconds
+const slideAnimationDuration = 30; // seconds
 
 const TrustedBy = () => {
   return (
     <>
       <style>{`
-        .marquee {
-          display: flex;
-          width: max-content;
-          animation: marqueeAnim ${slideDuration}s linear infinite;
-        }
-
-        @keyframes marqueeAnim {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+        @keyframes slide {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
       `}</style>
-
       <section className="py-10 px-4 bg-light flex flex-col items-center overflow-hidden">
         <h3 className="text-lg font-semibold text-grayish mb-6">
           Trusted by{' '}
@@ -38,16 +27,24 @@ const TrustedBy = () => {
           </span>
         </h3>
 
-        <div className="w-full max-w-6xl overflow-hidden" style={{ height: 80 }}>
-          {/* The duplicated logos ensure smooth loop */}
-          <div className="marquee" style={{ width: '200%' }}>
+        <div
+          className="relative w-full max-w-6xl overflow-hidden"
+          style={{ height: 80 }}
+        >
+          <div
+            className="flex gap-10"
+            style={{
+              width: '200%',
+              animation: `slide ${slideAnimationDuration}s linear infinite`,
+            }}
+          >
             {[...logos, ...logos].map((src, idx) => (
               <img
                 key={idx}
                 src={src}
                 alt="Company logo"
                 className="h-20 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
-                style={{ flexShrink: 0, marginRight: '2.5rem' }}
+                style={{ flexShrink: 0 }}
               />
             ))}
           </div>
