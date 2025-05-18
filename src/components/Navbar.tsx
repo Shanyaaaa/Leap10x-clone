@@ -71,19 +71,19 @@ const Navbar = () => {
               Coming Soon
             </span>
           </div>
-          {/* <Link
+           <Link
             to="/blogs"
             onClick={() => setOpen(false)}
             className="block py-3 pl-2 text-white"
           >
             Resources
           </Link>
-          <Link
+          {/* <Link
             to="/"
             className="bg-secondary text-light font-bold px-5 py-2 mt-4 mb-3 rounded-full w-full text-center hover:bg-white hover:text-primary border border-secondary shadow transition"
           >
             Request Demo
-          </Link> */}
+          </Link> */} 
         </div>
       )}
     </nav>
