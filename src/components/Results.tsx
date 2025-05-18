@@ -20,8 +20,7 @@ const AnimatedNumber = ({ target }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let start = 0;
-    const duration = 2000; // total duration in ms
+    const duration = 2000;
     const startTime = performance.now();
 
     const step = (timestamp) => {
@@ -38,7 +37,7 @@ const AnimatedNumber = ({ target }) => {
   }, [target]);
 
   return (
-    <span className="text-3xl font-extrabold text-secondary mb-1 transition-all duration-500">
+    <span className="text-5xl font-extrabold text-secondary mb-3">
       {count}
       {suffix}
     </span>
@@ -46,15 +45,18 @@ const AnimatedNumber = ({ target }) => {
 };
 
 const Results = () => (
-  <section className="py-10 px-4 bg-light">
-    <h3 className="text-xl font-bold text-center mb-8 text-primary">
+  <section className="py-16 px-6 bg-light">
+    <h3 className="text-3xl font-bold text-center mb-12 text-primary">
       Results Our Customers Have Seen
     </h3>
-    <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+    <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {results.map((r, idx) => (
-        <div key={idx} className="bg-white p-4 rounded-xl shadow text-center flex flex-col items-center transition-transform duration-300 hover:scale-105">
+        <div
+          key={idx}
+          className="bg-white p-8 rounded-2xl shadow-xl text-center flex flex-col items-center transition-transform duration-300 hover:scale-105"
+        >
           <AnimatedNumber target={r.value} />
-          <span className="text-xs text-grayish">{r.label}</span>
+          <span className="text-base font-medium text-gray-600">{r.label}</span>
         </div>
       ))}
     </div>
